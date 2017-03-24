@@ -58,14 +58,15 @@ def runner
     welcome
     # initial_round
     counter = initial_round
-    until hit?(counter) > 21
-        display_card_total(counter)
+    until counter > 21
         counter = hit?(counter)
-        hit?(counter)
+        display_card_total(counter)
 
+        # prompt_user
     end
-    puts "ended"
-
+    if counter > 21
+        end_game(counter)
+    end
 end
 
 
